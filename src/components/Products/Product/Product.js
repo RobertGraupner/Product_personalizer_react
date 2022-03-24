@@ -9,13 +9,13 @@ const Product = props => {
 
 	const [currentColor, setCurrentColor] = useState(data.colors[0]);
 	const [currentSize, setCurrentSize] = useState(data.sizes[0].name);
-
+	/*
 	const prepareColorClassName = color => {
 		return styles[
 			"color" + color[0].toUpperCase() + color.substr(1).toLowerCase()
 		];
 	};
-
+	*/
 	const getPrice = () => {
 		const choosedSize = data.sizes.find( element => element.name === currentSize);
 		return data.basePrice + choosedSize.additionalPrice
@@ -46,7 +46,7 @@ const Product = props => {
 					setCurrentSize={setCurrentSize}
 					currentColor={currentColor}
 					setCurrentColor={setCurrentColor}
-					prepareColorClassName={prepareColorClassName}
+					prepareColorClassName={props.prepareColorClassName}
 					getPrice={getPrice()}
 				/>
 			</div>
